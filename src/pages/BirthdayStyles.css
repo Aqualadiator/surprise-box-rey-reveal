@@ -147,7 +147,7 @@
   }
 }
 
-/* Ice Bear Styles */
+/* Ice Bear Styles - Made More Cute and Alive */
 .ice-bear-container {
   position: relative;
   margin: 2rem auto;
@@ -172,82 +172,181 @@
   width: 120px;
   height: 150px;
   margin: 0 auto 1rem;
+  animation: bearFloat 3s ease-in-out infinite;
+}
+
+@keyframes bearFloat {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
 }
 
 .bear-body {
-  width: 80px;
-  height: 100px;
-  background: white;
-  border-radius: 40px;
+  width: 85px;
+  height: 105px;
+  background: linear-gradient(145deg, #ffffff 0%, #f8f8ff 100%);
+  border-radius: 45px;
   position: absolute;
   bottom: 0;
-  left: 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  left: 17px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 182, 193, 0.2);
 }
 
 .bear-head {
-  width: 70px;
-  height: 70px;
-  background: white;
-  border-radius: 50%;
-  position: absolute;
-  top: 20px;
-  left: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.bear-ear {
-  width: 25px;
-  height: 25px;
-  background: white;
+  width: 75px;
+  height: 75px;
+  background: linear-gradient(145deg, #ffffff 0%, #f8f8ff 100%);
   border-radius: 50%;
   position: absolute;
   top: 15px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  left: 22px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 182, 193, 0.2);
 }
 
-.bear-ear.left { left: 15px; }
-.bear-ear.right { right: 15px; }
-
-.bear-eye {
-  width: 8px;
-  height: 8px;
-  background: black;
+.bear-ear {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(145deg, #ffffff 0%, #f8f8ff 100%);
   border-radius: 50%;
   position: absolute;
-  top: 35px;
+  top: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 182, 193, 0.2);
 }
 
-.bear-eye.left { left: 35px; }
-.bear-eye.right { right: 35px; }
+.bear-ear::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(145deg, #ffb6c1 0%, #ffc0cb 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-.bear-nose {
-  width: 6px;
-  height: 6px;
-  background: black;
+.bear-ear.left { left: 12px; }
+.bear-ear.right { right: 12px; }
+
+.bear-eye {
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #2c3e50 0%, #34495e 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: 32px;
+  animation: bearBlink 4s ease-in-out infinite;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes bearBlink {
+  0%, 90%, 100% { 
+    height: 12px;
+    top: 32px;
+  }
+  95% { 
+    height: 2px;
+    top: 37px;
+  }
+}
+
+.bear-eye::after {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  animation: eyeShine 3s ease-in-out infinite;
+}
+
+@keyframes eyeShine {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.bear-eye.left { left: 28px; }
+.bear-eye.right { right: 28px; }
+
+/* Rosy Cheeks */
+.bear-head::before,
+.bear-head::after {
+  content: '';
+  width: 15px;
+  height: 12px;
+  background: radial-gradient(circle, rgba(255, 182, 193, 0.6) 0%, rgba(255, 182, 193, 0.2) 100%);
   border-radius: 50%;
   position: absolute;
   top: 45px;
+  animation: cheekGlow 2.5s ease-in-out infinite alternate;
+}
+
+.bear-head::before { left: 8px; }
+.bear-head::after { right: 8px; }
+
+@keyframes cheekGlow {
+  0% { opacity: 0.4; }
+  100% { opacity: 0.8; }
+}
+
+.bear-nose {
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(145deg, #2c3e50 0%, #34495e 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: 42px;
   left: 50%;
   transform: translateX(-50%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: noseWiggle 3s ease-in-out infinite;
+}
+
+@keyframes noseWiggle {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.1); }
 }
 
 .bear-mouth {
-  width: 20px;
-  height: 10px;
-  border: 2px solid black;
+  width: 25px;
+  height: 12px;
+  border: 3px solid #2c3e50;
   border-top: none;
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 25px 25px;
   position: absolute;
-  top: 52px;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
+  animation: mouthSmile 4s ease-in-out infinite;
+}
+
+@keyframes mouthSmile {
+  0%, 70%, 100% { 
+    width: 25px;
+    border-radius: 0 0 25px 25px;
+  }
+  85% { 
+    width: 30px;
+    border-radius: 0 0 30px 30px;
+  }
 }
 
 .bear-mouth.happy {
-  border-top: 2px solid black;
+  border-top: 3px solid #2c3e50;
   border-bottom: none;
-  border-radius: 20px 20px 0 0;
+  border-radius: 30px 30px 0 0;
+  width: 30px;
+  height: 15px;
+  animation: happyMouth 2s ease-in-out infinite;
+}
+
+@keyframes happyMouth {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.05); }
 }
 
 .animate-bear {
