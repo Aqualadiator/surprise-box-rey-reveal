@@ -172,6 +172,8 @@
   height: 180px; /* Increased height to accommodate legs */
   margin: 0 auto 1rem;
   animation: bearFloat 3s ease-in-out infinite;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 @keyframes bearFloat {
@@ -189,6 +191,12 @@
   left: 17px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1), inset 0 2px 4px rgba(255, 255, 255, 0.8);
   border: 2px solid rgba(255, 182, 193, 0.2);
+  animation: bodyBreathe 4s ease-in-out infinite;
+}
+
+@keyframes bodyBreathe {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.02); }
 }
 
 .bear-head {
@@ -201,6 +209,14 @@
   left: 22px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), inset 0 2px 4px rgba(255, 255, 255, 0.8);
   border: 2px solid rgba(255, 182, 193, 0.2);
+  animation: headTilt 6s ease-in-out infinite;
+}
+
+@keyframes headTilt {
+  0%, 70%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(-2deg); }
+  35% { transform: rotate(2deg); }
+  50% { transform: rotate(-1deg); }
 }
 
 .bear-ear {
@@ -236,19 +252,22 @@
   border-radius: 50%;
   position: absolute;
   top: 32px;
-  animation: bearBlink 4s ease-in-out infinite;
+  animation: bearBlink 4s ease-in-out infinite, eyeTrack 8s ease-in-out infinite;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
 }
 
-@keyframes bearBlink {
-  0%, 90%, 100% { 
-    height: 12px;
-    top: 32px;
-  }
-  95% { 
-    height: 2px;
-    top: 37px;
-  }
+@keyframes eyeTrack {
+  0%, 20%, 80%, 100% { transform: translateX(0px); }
+  10% { transform: translateX(-1px); }
+  30% { transform: translateX(1px); }
+  50% { transform: translateX(-0.5px); }
+  70% { transform: translateX(0.5px); }
+}
+
+.ice-bear:hover .bear-eye {
+  transform: translateX(0px) scale(1.1);
+  animation-play-state: paused;
 }
 
 .bear-eye::after {
@@ -271,7 +290,7 @@
 .bear-eye.left { left: 28px; }
 .bear-eye.right { right: 28px; }
 
-/* Bear Arms */
+/* Bear Arms - More Interactive */
 .bear-arm {
   width: 25px;
   height: 60px;
@@ -282,6 +301,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), inset 0 1px 3px rgba(255, 255, 255, 0.8);
   border: 2px solid rgba(255, 182, 193, 0.2);
   animation: armWave 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
 }
 
 .bear-arm.left {
@@ -295,11 +315,21 @@
   animation-delay: 0.5s;
 }
 
+.ice-bear:hover .bear-arm.right {
+  animation: enthusiasticWave 1s ease-in-out infinite;
+}
+
 @keyframes armWave {
   0%, 70%, 100% { transform: rotate(0deg); }
   15% { transform: rotate(-15deg); }
   35% { transform: rotate(10deg); }
   50% { transform: rotate(-5deg); }
+}
+
+@keyframes enthusiasticWave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-25deg); }
+  75% { transform: rotate(15deg); }
 }
 
 /* Bear Legs */
@@ -391,6 +421,17 @@
   animation: cheekGlow 2.5s ease-in-out infinite alternate;
 }
 
+.ice-bear:hover .bear-head::before,
+.ice-bear:hover .bear-head::after {
+  background: radial-gradient(circle, rgba(255, 182, 193, 0.9) 0%, rgba(255, 182, 193, 0.4) 100%);
+  animation: cheekBlush 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes cheekBlush {
+  0% { opacity: 0.8; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.1); }
+}
+
 .bear-head::before { left: 8px; }
 .bear-head::after { right: 8px; }
 
@@ -412,6 +453,15 @@
   animation: noseWiggle 3s ease-in-out infinite;
 }
 
+.ice-bear:hover .bear-nose {
+  animation: noseSniff 0.3s ease-in-out infinite;
+}
+
+@keyframes noseSniff {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.2); }
+}
+
 @keyframes noseWiggle {
   0%, 100% { transform: translateX(-50%) scale(1); }
   50% { transform: translateX(-50%) scale(1.1); }
@@ -428,6 +478,21 @@
   left: 50%;
   transform: translateX(-50%);
   animation: mouthSmile 4s ease-in-out infinite;
+}
+
+.ice-bear:hover .bear-mouth {
+  width: 30px;
+  border-radius: 0 0 30px 30px;
+  animation: happyGiggle 0.5s ease-in-out infinite;
+}
+
+@keyframes happyGiggle {
+  0%, 100% { 
+    transform: translateX(-50%) scale(1);
+  }
+  50% { 
+    transform: translateX(-50%) scale(1.05);
+  }
 }
 
 @keyframes mouthSmile {
