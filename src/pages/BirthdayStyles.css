@@ -146,7 +146,7 @@
   }
 }
 
-/* Ice Bear Styles - Made More Cute and Alive */
+/* Ice Bear Styles - We Bare Bears Style */
 .ice-bear-container {
   position: relative;
   margin: 2rem auto;
@@ -168,8 +168,8 @@
 
 .ice-bear {
   position: relative;
-  width: 120px;
-  height: 180px; /* Increased height to accommodate legs */
+  width: 140px;
+  height: 160px;
   margin: 0 auto 1rem;
   animation: bearFloat 3s ease-in-out infinite;
   cursor: pointer;
@@ -181,16 +181,16 @@
   50% { transform: translateY(-8px) rotate(1deg); }
 }
 
+/* Bear Body - More rounded like reference */
 .bear-body {
-  width: 85px;
-  height: 105px;
-  background: linear-gradient(145deg, #ffffff 0%, #f8f8ff 100%);
-  border-radius: 45px;
+  width: 100px;
+  height: 120px;
+  background: #ffffff;
+  border-radius: 50px;
   position: absolute;
-  bottom: 30px; /* Adjusted to make room for legs */
-  left: 17px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1), inset 0 2px 4px rgba(255, 255, 255, 0.8);
-  border: 2px solid rgba(255, 182, 193, 0.2);
+  bottom: 0;
+  left: 20px;
+  border: 3px solid #2c3e50;
   animation: bodyBreathe 4s ease-in-out infinite;
 }
 
@@ -199,16 +199,16 @@
   50% { transform: scaleY(1.02); }
 }
 
+/* Bear Head - Rounder like reference */
 .bear-head {
-  width: 75px;
-  height: 75px;
-  background: linear-gradient(145deg, #ffffff 0%, #f8f8ff 100%);
+  width: 90px;
+  height: 90px;
+  background: #ffffff;
   border-radius: 50%;
   position: absolute;
-  top: 15px;
-  left: 22px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), inset 0 2px 4px rgba(255, 255, 255, 0.8);
-  border: 2px solid rgba(255, 182, 193, 0.2);
+  top: 0;
+  left: 25px;
+  border: 3px solid #2c3e50;
   animation: headTilt 6s ease-in-out infinite;
 }
 
@@ -219,129 +219,109 @@
   50% { transform: rotate(-1deg); }
 }
 
+/* Bear Ears - Small and round like reference */
 .bear-ear {
-  width: 28px;
-  height: 28px;
-  background: linear-gradient(145deg, #ffffff 0%, #f8f8ff 100%);
+  width: 22px;
+  height: 22px;
+  background: #ffffff;
   border-radius: 50%;
   position: absolute;
-  top: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.8);
-  border: 2px solid rgba(255, 182, 193, 0.2);
+  top: 8px;
+  border: 3px solid #2c3e50;
 }
 
-.bear-ear::after {
-  content: '';
-  width: 15px;
-  height: 15px;
-  background: linear-gradient(145deg, #ffb6c1 0%, #ffc0cb 100%);
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+.bear-ear.left { left: 15px; }
+.bear-ear.right { right: 15px; }
 
-.bear-ear.left { left: 12px; }
-.bear-ear.right { right: 12px; }
-
+/* Bear Eyes - Simple dots like reference */
 .bear-eye {
+  width: 8px;
+  height: 8px;
+  background: #2c3e50;
+  border-radius: 50%;
+  position: absolute;
+  top: 28px;
+  animation: bearBlink 4s ease-in-out infinite;
+}
+
+@keyframes bearBlink {
+  0%, 90%, 100% { 
+    height: 8px;
+    top: 28px;
+  }
+  95% { 
+    height: 2px;
+    top: 31px;
+  }
+}
+
+.bear-eye.left { left: 25px; }
+.bear-eye.right { right: 25px; }
+
+/* Bear Nose - Simple oval like reference */
+.bear-nose {
   width: 12px;
-  height: 12px;
-  background: radial-gradient(circle, #2c3e50 0%, #34495e 100%);
+  height: 8px;
+  background: #2c3e50;
   border-radius: 50%;
   position: absolute;
-  top: 32px;
-  animation: bearBlink 4s ease-in-out infinite, eyeTrack 8s ease-in-out infinite;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease;
+  top: 38px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-@keyframes eyeTrack {
-  0%, 20%, 80%, 100% { transform: translateX(0px); }
-  10% { transform: translateX(-1px); }
-  30% { transform: translateX(1px); }
-  50% { transform: translateX(-0.5px); }
-  70% { transform: translateX(0.5px); }
-}
-
-.ice-bear:hover .bear-eye {
-  transform: translateX(0px) scale(1.1);
-  animation-play-state: paused;
-}
-
-.bear-eye::after {
-  content: '';
-  width: 4px;
-  height: 4px;
-  background: white;
-  border-radius: 50%;
+/* Bear Mouth - Simple line like reference */
+.bear-mouth {
+  width: 2px;
+  height: 8px;
+  background: #2c3e50;
   position: absolute;
-  top: 2px;
-  left: 2px;
-  animation: eyeShine 3s ease-in-out infinite;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 1px;
 }
 
-@keyframes eyeShine {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 1; }
-}
-
-.bear-eye.left { left: 28px; }
-.bear-eye.right { right: 28px; }
-
-/* Bear Arms - More Interactive */
+/* Bear Arms - Simple and rounded */
 .bear-arm {
-  width: 25px;
-  height: 60px;
-  background: linear-gradient(145deg, #ffffff 0%, #f8f8ff 100%);
+  width: 30px;
+  height: 70px;
+  background: #ffffff;
   border-radius: 15px;
   position: absolute;
-  top: 60px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), inset 0 1px 3px rgba(255, 255, 255, 0.8);
-  border: 2px solid rgba(255, 182, 193, 0.2);
+  top: 40px;
+  border: 3px solid #2c3e50;
   animation: armWave 4s ease-in-out infinite;
   transition: transform 0.3s ease;
 }
 
 .bear-arm.left {
-  left: -8px;
+  left: -15px;
   transform-origin: top center;
 }
 
 .bear-arm.right {
-  right: -8px;
+  right: -15px;
   transform-origin: top center;
   animation-delay: 0.5s;
 }
 
-.ice-bear:hover .bear-arm.right {
-  animation: enthusiasticWave 1s ease-in-out infinite;
-}
-
 @keyframes armWave {
   0%, 70%, 100% { transform: rotate(0deg); }
-  15% { transform: rotate(-15deg); }
-  35% { transform: rotate(10deg); }
-  50% { transform: rotate(-5deg); }
+  15% { transform: rotate(-10deg); }
+  35% { transform: rotate(5deg); }
+  50% { transform: rotate(-3deg); }
 }
 
-@keyframes enthusiasticWave {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-25deg); }
-  75% { transform: rotate(15deg); }
-}
-
-/* Bear Legs */
+/* Bear Legs - Simple and rounded */
 .bear-leg {
-  width: 30px;
-  height: 35px;
-  background: linear-gradient(145deg, #ffffff 0%, #f8f8ff 100%);
+  width: 35px;
+  height: 40px;
+  background: #ffffff;
   border-radius: 20px;
   position: absolute;
-  bottom: 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), inset 0 1px 3px rgba(255, 255, 255, 0.8);
-  border: 2px solid rgba(255, 182, 193, 0.2);
+  bottom: -10px;
+  border: 3px solid #2c3e50;
   animation: legBounce 3s ease-in-out infinite;
 }
 
@@ -356,168 +336,44 @@
 
 @keyframes legBounce {
   0%, 50%, 100% { transform: scaleY(1); }
-  25% { transform: scaleY(1.1); }
-  75% { transform: scaleY(0.95); }
+  25% { transform: scaleY(1.05); }
+  75% { transform: scaleY(0.98); }
 }
 
-/* Bear Paws (hands and feet) */
-.bear-paw {
-  width: 18px;
-  height: 15px;
-  background: linear-gradient(145deg, #ffb6c1 0%, #ffc0cb 100%);
-  border-radius: 50%;
+/* Axe - Like in reference image */
+.bear-axe {
   position: absolute;
-  box-shadow: 0 2px 8px rgba(255, 182, 193, 0.4);
+  top: 15px;
+  right: -40px;
+  animation: axeHold 4s ease-in-out infinite;
+  z-index: 10;
 }
 
-.bear-paw.hand-left {
-  bottom: -5px;
-  left: 4px;
-  animation: pawWiggle 4s ease-in-out infinite;
+.axe-handle {
+  width: 6px;
+  height: 80px;
+  background: #8B4513;
+  border-radius: 3px;
+  position: relative;
+  border: 2px solid #2c3e50;
 }
 
-.bear-paw.hand-right {
-  bottom: -5px;
-  right: 4px;
-  animation: pawWiggle 4s ease-in-out infinite;
-  animation-delay: 0.5s;
-}
-
-.bear-paw.foot-left {
-  bottom: -8px;
-  left: 6px;
-  animation: footTap 3s ease-in-out infinite;
-}
-
-.bear-paw.foot-right {
-  bottom: -8px;
-  right: 6px;
-  animation: footTap 3s ease-in-out infinite;
-  animation-delay: 0.3s;
-}
-
-@keyframes pawWiggle {
-  0%, 70%, 100% { transform: rotate(0deg) scale(1); }
-  15% { transform: rotate(-10deg) scale(1.05); }
-  35% { transform: rotate(8deg) scale(1.02); }
-  50% { transform: rotate(-3deg) scale(1.01); }
-}
-
-@keyframes footTap {
-  0%, 50%, 100% { transform: scaleX(1); }
-  25% { transform: scaleX(1.1); }
-  75% { transform: scaleX(0.95); }
-}
-
-.bear-head::before,
-.bear-head::after {
-  content: '';
-  width: 15px;
-  height: 12px;
-  background: radial-gradient(circle, rgba(255, 182, 193, 0.6) 0%, rgba(255, 182, 193, 0.2) 100%);
-  border-radius: 50%;
+.axe-blade {
+  width: 35px;
+  height: 25px;
+  background: #C0C0C0;
+  border: 2px solid #2c3e50;
   position: absolute;
-  top: 45px;
-  animation: cheekGlow 2.5s ease-in-out infinite alternate;
+  top: -5px;
+  left: -20px;
+  clip-path: polygon(0% 50%, 30% 0%, 100% 20%, 100% 80%, 30% 100%);
 }
 
-.ice-bear:hover .bear-head::before,
-.ice-bear:hover .bear-head::after {
-  background: radial-gradient(circle, rgba(255, 182, 193, 0.9) 0%, rgba(255, 182, 193, 0.4) 100%);
-  animation: cheekBlush 0.5s ease-in-out infinite alternate;
-}
-
-@keyframes cheekBlush {
-  0% { opacity: 0.8; transform: scale(1); }
-  100% { opacity: 1; transform: scale(1.1); }
-}
-
-.bear-head::before { left: 8px; }
-.bear-head::after { right: 8px; }
-
-@keyframes cheekGlow {
-  0% { opacity: 0.4; }
-  100% { opacity: 0.8; }
-}
-
-.bear-nose {
-  width: 8px;
-  height: 8px;
-  background: linear-gradient(145deg, #2c3e50 0%, #34495e 100%);
-  border-radius: 50%;
-  position: absolute;
-  top: 42px;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  animation: noseWiggle 3s ease-in-out infinite;
-}
-
-.ice-bear:hover .bear-nose {
-  animation: noseSniff 0.3s ease-in-out infinite;
-}
-
-@keyframes noseSniff {
-  0%, 100% { transform: translateX(-50%) scale(1); }
-  50% { transform: translateX(-50%) scale(1.2); }
-}
-
-@keyframes noseWiggle {
-  0%, 100% { transform: translateX(-50%) scale(1); }
-  50% { transform: translateX(-50%) scale(1.1); }
-}
-
-.bear-mouth {
-  width: 25px;
-  height: 12px;
-  border: 3px solid #2c3e50;
-  border-top: none;
-  border-radius: 0 0 25px 25px;
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: mouthSmile 4s ease-in-out infinite;
-}
-
-.ice-bear:hover .bear-mouth {
-  width: 30px;
-  border-radius: 0 0 30px 30px;
-  animation: happyGiggle 0.5s ease-in-out infinite;
-}
-
-@keyframes happyGiggle {
-  0%, 100% { 
-    transform: translateX(-50%) scale(1);
-  }
-  50% { 
-    transform: translateX(-50%) scale(1.05);
-  }
-}
-
-@keyframes mouthSmile {
-  0%, 70%, 100% { 
-    width: 25px;
-    border-radius: 0 0 25px 25px;
-  }
-  85% { 
-    width: 30px;
-    border-radius: 0 0 30px 30px;
-  }
-}
-
-.bear-mouth.happy {
-  border-top: 3px solid #2c3e50;
-  border-bottom: none;
-  border-radius: 30px 30px 0 0;
-  width: 30px;
-  height: 15px;
-  animation: happyMouth 2s ease-in-out infinite;
-}
-
-@keyframes happyMouth {
-  0%, 100% { transform: translateX(-50%) scale(1); }
-  50% { transform: translateX(-50%) scale(1.05); }
+@keyframes axeHold {
+  0%, 70%, 100% { transform: rotate(-15deg); }
+  15% { transform: rotate(-20deg); }
+  35% { transform: rotate(-10deg); }
+  50% { transform: rotate(-18deg); }
 }
 
 .animate-bear {

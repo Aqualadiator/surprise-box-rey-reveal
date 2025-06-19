@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Gift, Cake } from 'lucide-react';
 import './BirthdayStyles.css';
@@ -82,6 +81,15 @@ const Index = () => {
                   <div className="bear-eye right"></div>
                   <div className="bear-nose"></div>
                   <div className="bear-mouth"></div>
+                  <div className="bear-arm left"></div>
+                  <div className="bear-arm right"></div>
+                  <div className="bear-leg left"></div>
+                  <div className="bear-leg right"></div>
+                  <div className="bear-axe">
+                    <div className="axe-handle">
+                      <div className="axe-blade"></div>
+                    </div>
+                  </div>
                 </div>
                 <div className="cake-container">
                   <Cake className="birthday-cake" size={60} />
@@ -255,6 +263,15 @@ const Index = () => {
               <div className="bear-eye right"></div>
               <div className="bear-nose"></div>
               <div className="bear-mouth happy"></div>
+              <div className="bear-arm left"></div>
+              <div className="bear-arm right"></div>
+              <div className="bear-leg left"></div>
+              <div className="bear-leg right"></div>
+              <div className="bear-axe">
+                <div className="axe-handle">
+                  <div className="axe-blade"></div>
+                </div>
+              </div>
             </div>
           </div>
         );
