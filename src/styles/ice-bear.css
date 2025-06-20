@@ -148,35 +148,6 @@
   animation-delay: 0.3s;
 }
 
-/* Axe - Like in reference image */
-.bear-axe {
-  position: absolute;
-  top: 15px;
-  right: -40px;
-  animation: axeHold 4s ease-in-out infinite;
-  z-index: 10;
-}
-
-.axe-handle {
-  width: 6px;
-  height: 80px;
-  background: #8B4513;
-  border-radius: 3px;
-  position: relative;
-  border: 2px solid #2c3e50;
-}
-
-.axe-blade {
-  width: 35px;
-  height: 25px;
-  background: #C0C0C0;
-  border: 2px solid #2c3e50;
-  position: absolute;
-  top: -5px;
-  left: -20px;
-  clip-path: polygon(0% 50%, 30% 0%, 100% 20%, 100% 80%, 30% 100%);
-}
-
 .animate-bear {
   animation: bearBounce 1s ease-in-out;
 }

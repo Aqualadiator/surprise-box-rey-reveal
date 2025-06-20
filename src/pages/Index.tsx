@@ -85,11 +85,6 @@ const Index = () => {
                   <div className="bear-arm right"></div>
                   <div className="bear-leg left"></div>
                   <div className="bear-leg right"></div>
-                  <div className="bear-axe">
-                    <div className="axe-handle">
-                      <div className="axe-blade"></div>
-                    </div>
-                  </div>
                 </div>
                 <div className="cake-container">
                   <Cake className="birthday-cake" size={60} />
@@ -267,11 +262,6 @@ const Index = () => {
               <div className="bear-arm right"></div>
               <div className="bear-leg left"></div>
               <div className="bear-leg right"></div>
-              <div className="bear-axe">
-                <div className="axe-handle">
-                  <div className="axe-blade"></div>
-                </div>
-              </div>
             </div>
           </div>
         );
