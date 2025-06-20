@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Gift, Cake } from 'lucide-react';
 import './BirthdayStyles.css';
@@ -9,6 +10,7 @@ const Index = () => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [showBear, setShowBear] = useState(false);
   const [playMusic, setPlayMusic] = useState(false);
+  const [envelopeOpened, setEnvelopeOpened] = useState(false);
 
   const questions = [
     "Are you really sure?",
@@ -41,6 +43,10 @@ const Index = () => {
     } else {
       setCurrentScene(6);
     }
+  };
+
+  const handleEnvelopeClick = () => {
+    setEnvelopeOpened(true);
   };
 
   const renderScene = () => {
@@ -220,17 +226,26 @@ const Index = () => {
               Still there! Find the letter that Jackie wrote for you 💌
             </div>
             <div className="letter-container">
-              <div className="letter">
-                <div className="letter-header">Dear Rey,</div>
-                <div className="letter-content">
-                  Happy 20th Birthday! 🎉<br/>
-                  Hope your special day is filled with<br/>
-                  joy, laughter, and all your favorite things!<br/>
-                  <br/>
-                  With love,<br/>
-                  Jackie 💕
+              {!envelopeOpened ? (
+                <div className="envelope" onClick={handleEnvelopeClick}>
+                  <div className="envelope-back"></div>
+                  <div className="envelope-front"></div>
+                  <div className="envelope-flap"></div>
+                  <div className="heart-seal">💖</div>
                 </div>
-              </div>
+              ) : (
+                <div className="letter opened">
+                  <div className="letter-header">Dear Rey,</div>
+                  <div className="letter-content">
+                    Happy 20th Birthday! 🎉<br/>
+                    Hope your special day is filled with<br/>
+                    joy, laughter, and all your favorite things!<br/>
+                    <br/>
+                    With love,<br/>
+                    Jackie 💕
+                  </div>
+                </div>
+              )}
             </div>
             <div className="button-container">
               <button className="done-button" onClick={nextScene}>Done</button>
