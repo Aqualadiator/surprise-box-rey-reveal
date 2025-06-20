@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Gift, Cake } from 'lucide-react';
 import './BirthdayStyles.css';
@@ -213,18 +212,6 @@ const Index = () => {
             <div className="bubble-text">
               Open it now!
             </div>
-            <div className="tap-to-continue" onClick={nextScene}>
-              Tap to continue
-            </div>
-          </div>
-        );
-
-      case 11:
-        return (
-          <div className="scene letter-scene">
-            <div className="bubble-text">
-              Still there! Find the letter that Jackie wrote for you 💌
-            </div>
             <div className="letter-container">
               {!envelopeOpened ? (
                 <div className="envelope" onClick={handleEnvelopeClick}>
@@ -247,14 +234,16 @@ const Index = () => {
                 </div>
               )}
             </div>
-            <div className="button-container">
-              <button className="done-button" onClick={nextScene}>Done</button>
-              <button className="not-yet-button" onClick={() => {}}>Not yet</button>
-            </div>
+            {envelopeOpened && (
+              <div className="button-container">
+                <button className="done-button" onClick={nextScene}>Done</button>
+                <button className="not-yet-button" onClick={() => {}}>Not yet</button>
+              </div>
+            )}
           </div>
         );
 
-      case 12:
+      case 11:
         return (
           <div className="scene final-scene">
             <div className="bubble-text final-message">
