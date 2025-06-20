@@ -1,0 +1,60 @@
+
+/* Gift Box Styles */
+.gift-box {
+  width: 150px;
+  height: 150px;
+  margin: 2rem auto;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.gift-box:hover {
+  transform: scale(1.05);
+}
+
+.box-base {
+  width: 150px;
+  height: 100px;
+  background: linear-gradient(45deg, #ff6b9d, #ff8fb3);
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+}
+
+.box-lid {
+  width: 160px;
+  height: 40px;
+  background: linear-gradient(45deg, #ff8fb3, #ffa8cc);
+  border-radius: 10px;
+  position: absolute;
+  top: 20px;
+  left: -5px;
+  transition: all 0.8s ease;
+  box-shadow: 0 5px 20px rgba(255, 143, 179, 0.3);
+}
+
+.gift-box.opened .box-lid {
+  transform: translateY(-50px) rotateX(45deg);
+}
+
+.ribbon-v, .ribbon-h {
+  background: linear-gradient(45deg, #ff1744, #ff5722);
+  position: absolute;
+  box-shadow: 0 3px 10px rgba(255, 23, 68, 0.3);
+}
+
+.ribbon-v {
+  width: 20px;
+  height: 150px;
+  left: 65px;
+  top: 10px;
+}
+
+.ribbon-h {
+  width: 160px;
+  height: 20px;
+  left: -5px;
+  top: 75px;
+}

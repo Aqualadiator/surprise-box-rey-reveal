@@ -1,0 +1,187 @@
+
+/* Ice Bear Styles - We Bare Bears Style */
+.ice-bear-container {
+  position: relative;
+  margin: 2rem auto;
+}
+
+.ice-bear {
+  position: relative;
+  width: 140px;
+  height: 160px;
+  margin: 0 auto 1rem;
+  animation: bearFloat 3s ease-in-out infinite;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Bear Body - More rounded like reference */
+.bear-body {
+  width: 100px;
+  height: 120px;
+  background: #ffffff;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  border: 3px solid #2c3e50;
+  animation: bodyBreathe 4s ease-in-out infinite;
+}
+
+/* Bear Head - Rounder like reference */
+.bear-head {
+  width: 90px;
+  height: 90px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 25px;
+  border: 3px solid #2c3e50;
+  animation: headTilt 6s ease-in-out infinite;
+}
+
+/* Bear Ears - Small and round like reference */
+.bear-ear {
+  width: 22px;
+  height: 22px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  border: 3px solid #2c3e50;
+}
+
+.bear-ear.left { left: 15px; }
+.bear-ear.right { right: 15px; }
+
+/* Bear Eyes - Simple dots like reference */
+.bear-eye {
+  width: 8px;
+  height: 8px;
+  background: #2c3e50;
+  border-radius: 50%;
+  position: absolute;
+  top: 28px;
+  animation: bearBlink 4s ease-in-out infinite;
+}
+
+.bear-eye.left { left: 25px; }
+.bear-eye.right { right: 25px; }
+
+/* Bear Nose - Simple oval like reference */
+.bear-nose {
+  width: 12px;
+  height: 8px;
+  background: #2c3e50;
+  border-radius: 50%;
+  position: absolute;
+  top: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Bear Mouth - Simple line like reference */
+.bear-mouth {
+  width: 2px;
+  height: 8px;
+  background: #2c3e50;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 1px;
+}
+
+.bear-mouth.happy {
+  width: 20px;
+  height: 10px;
+  border: 2px solid #2c3e50;
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  background: transparent;
+  top: 48px;
+}
+
+/* Bear Arms - Simple and rounded */
+.bear-arm {
+  width: 30px;
+  height: 70px;
+  background: #ffffff;
+  border-radius: 15px;
+  position: absolute;
+  top: 40px;
+  border: 3px solid #2c3e50;
+  animation: armWave 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.bear-arm.left {
+  left: -15px;
+  transform-origin: top center;
+}
+
+.bear-arm.right {
+  right: -15px;
+  transform-origin: top center;
+  animation-delay: 0.5s;
+}
+
+/* Bear Legs - Simple and rounded */
+.bear-leg {
+  width: 35px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 20px;
+  position: absolute;
+  bottom: -10px;
+  border: 3px solid #2c3e50;
+  animation: legBounce 3s ease-in-out infinite;
+}
+
+.bear-leg.left {
+  left: 25px;
+}
+
+.bear-leg.right {
+  right: 25px;
+  animation-delay: 0.3s;
+}
+
+/* Axe - Like in reference image */
+.bear-axe {
+  position: absolute;
+  top: 15px;
+  right: -40px;
+  animation: axeHold 4s ease-in-out infinite;
+  z-index: 10;
+}
+
+.axe-handle {
+  width: 6px;
+  height: 80px;
+  background: #8B4513;
+  border-radius: 3px;
+  position: relative;
+  border: 2px solid #2c3e50;
+}
+
+.axe-blade {
+  width: 35px;
+  height: 25px;
+  background: #C0C0C0;
+  border: 2px solid #2c3e50;
+  position: absolute;
+  top: -5px;
+  left: -20px;
+  clip-path: polygon(0% 50%, 30% 0%, 100% 20%, 100% 80%, 30% 100%);
+}
+
+.animate-bear {
+  animation: bearBounce 1s ease-in-out;
+}
+
+.final-bear {
+  margin-top: 2rem;
+  animation: finalBearDance 2s ease-in-out infinite;
+}
