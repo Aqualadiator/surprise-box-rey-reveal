@@ -64,6 +64,15 @@ const Index = () => {
               <div className="box-base"></div>
               <div className="ribbon-v"></div>
               <div className="ribbon-h"></div>
+              <div className="ribbon-bow">
+                <div className="bow-left"></div>
+                <div className="bow-right"></div>
+                <div className="bow-center"></div>
+                <div className="bow-tails">
+                  <div className="bow-tail-left"></div>
+                  <div className="bow-tail-right"></div>
+                </div>
+              </div>
             </div>
             
             {showConfetti && (
