@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Gift, Cake } from 'lucide-react';
+import InstallPrompt from '../components/InstallPrompt';
 import './BirthdayStyles.css';
 
 const Index = () => {
@@ -287,6 +288,7 @@ const Index = () => {
   return (
     <div className="birthday-app">
       {renderScene()}
+      <InstallPrompt />
     </div>
   );
 };
